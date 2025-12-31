@@ -1,0 +1,366 @@
+/* Existing Styles... (I will only add new styles below, but for context I'll provide the relevant section or just append) */
+/* Actually, I should probably replace the visual section CSS completely */
+
+.home-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding-top: 120px;
+    min-height: 100vh;
+}
+
+/* Blobs */
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.blob-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--primary);
+    top: -100px;
+    right: -50px;
+    animation: float 8s ease-in-out infinite;
+}
+
+.blob-2 {
+    width: 300px;
+    height: 300px;
+    background: var(--secondary);
+    bottom: 0;
+    left: -50px;
+    animation: float 6s ease-in-out infinite reverse;
+}
+
+/* Hero Section */
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 6rem;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.badge {
+    background: rgba(5, 150, 105, 0.1);
+    color: var(--primary);
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 800;
+    margin: 0 0 1.5rem 0;
+    letter-spacing: -1px;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientText 5s ease infinite;
+    background-size: 200% 200%;
+}
+
+.hero-description {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-lg {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--text-main);
+    padding: 1rem 2.5rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.btn-secondary:hover {
+    background: #f9fafb;
+    transform: translateY(-2px);
+}
+
+/* Updated Hero Visual (Dashboard Mock) */
+.hero-visual {
+    height: 450px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: perspective(1000px) rotateY(-8deg) rotateX(4deg);
+    transition: transform 0.4s ease;
+    overflow: hidden;
+    background: white !important;
+    /* Force opaque white for mock base */
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.hero-visual:hover {
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+    scale: 1.02;
+}
+
+.dashboard-mock {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.mock-sidebar {
+    width: 60px;
+    border-right: 1px solid #f3f4f6;
+    padding: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background: #fcfcfc;
+}
+
+.sidebar-item {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #e5e7eb;
+}
+
+.sidebar-item.active {
+    background: var(--primary);
+    box-shadow: 0 4px 6px rgba(5, 150, 105, 0.2);
+}
+
+.mock-main {
+    flex: 1;
+    padding: 1.5rem;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.mock-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.mock-search {
+    width: 200px;
+    height: 32px;
+    background: #f3f4f6;
+    border-radius: 6px;
+}
+
+.mock-profile {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #e5e7eb;
+}
+
+.mock-stats-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.mock-stat-card {
+    background: #f9fafb;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid #f3f4f6;
+}
+
+.mock-stat-card .label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+}
+
+.mock-stat-card .value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.mock-stat-card .trend {
+    font-size: 0.75rem;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.mock-activity-card {
+    flex: 1;
+    border: 1px solid #f3f4f6;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.activity-header {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 1.5rem;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.dot.red {
+    background: #fca5a5;
+}
+
+.dot.yellow {
+    background: #fcd34d;
+}
+
+.dot.green {
+    background: #86efac;
+}
+
+.activity-content {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 1rem;
+    gap: 8px;
+}
+
+.graph-bar {
+    width: 100%;
+    background: #f3f4f6;
+    border-radius: 4px;
+    transition: height 1s ease;
+}
+
+.graph-bar:hover {
+    background: var(--secondary);
+}
+
+.h-40 {
+    height: 40%;
+}
+
+.h-50 {
+    height: 50%;
+}
+
+.h-60 {
+    height: 60%;
+}
+
+.h-70 {
+    height: 70%;
+}
+
+.h-80 {
+    height: 80%;
+}
+
+.h-90 {
+    height: 90%;
+}
+
+
+/* Features Section */
+.features-section {
+    text-align: center;
+    padding-bottom: 6rem;
+}
+
+.features-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    padding: 2.5rem;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    background: rgba(5, 150, 105, 0.1);
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+}
+
+.feature-card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        display: none;
+        /* Hide complex visual on mobile for flow */
+    }
+}
